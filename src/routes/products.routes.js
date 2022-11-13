@@ -14,6 +14,6 @@ router.get("/categories",getCategories)
 
 router.get("/:category", getProductsForCategory);
 
-router.get("/search/:item", getProductsForName);
+router.post("/search/name", getProductsForName);
 
 export default router;

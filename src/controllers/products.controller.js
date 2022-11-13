@@ -56,7 +56,7 @@ export const getProductsForName = async (req, res) => {
   try {
     const [rows] = await pool.query(
       'SELECT P.id, P.name, P.price, P.discount, P.url_image AS image, C.name AS category FROM product P, category C WHERE P.category = C.id AND P.name LIKE ?',
-      "%" + [req.params.item] + "%"
+      "%" + [req.body.name] + "%"
     );
 
     if (rows.length <= 0)
